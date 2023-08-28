@@ -205,8 +205,24 @@ img {
 
 /* SITE-HEADER-HERO-WRAPPER */
 .site-header-hero-wrapper {
+    position: relative;
+    z-index: 1;
     padding-top: 56px;
+    padding-bottom: 255px;
     background-color: var(--dark-purple);
+}
+
+.site-header-hero-wrapper::after {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 1;
+    width: 100%;
+    height: 68px;
+    background-image: url(../imgs/hero__bc.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    content: '';
 }
 
 
@@ -237,11 +253,11 @@ img {
 }
 
 .hero__img {
-    display: block;
-}
-
-.hero__button {
-    margin-bottom: 50px;
+    position: absolute;
+    bottom: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
 }
 
 
@@ -397,7 +413,22 @@ img {
 /*=============================*
 **\ Responsive \*
 ==============================*/
+@media screen and (max-width: 1200px) {
+    .hero__img {
+        width: 630px;
+        bottom: -25%;
+    }
+}
+
 @media screen and (max-width: 1024px) {
+    .site-header-hero-wrapper {
+        padding-bottom: 230px;
+    }
+
+    .hero__img {
+        width: 580px;
+    }
+
     .features {
         padding-top: 200px;
         padding-bottom: 100px;
@@ -494,6 +525,11 @@ img {
         padding-top: 36px;
     }
 
+    .site-header-hero-wrapper::after {
+        height: 36px;
+        bottom: -176px;
+    }
+
     .site-header__container {
         margin-bottom: 60px;
     }
@@ -503,6 +539,10 @@ img {
         margin-bottom: 40px;
         font-size: 60px;
         line-height: 1;
+    }
+
+    .hero__img {
+        width: 480px;
     }
 
     .test-cta__inner {
@@ -555,6 +595,14 @@ img {
         padding-right: 16px;
     }
 
+    .site-header-hero-wrapper {
+        padding-bottom: 140px;
+    }
+
+    .site-header-hero-wrapper::after {
+        height: 18px;
+    }
+
     .site-header__container {
         margin-bottom: 64px;
     }
@@ -564,8 +612,9 @@ img {
         font-size: 50px;
     }
 
-    .hero__button {
-        margin-bottom: 60px;
+    .hero__img {
+        width: 320px;
+        bottom: -110px;
     }
 
     .features {
@@ -598,6 +647,10 @@ img {
 
 
 @media screen and (max-width: 350px) {
+    .hero__img {
+        width: 90%;
+        bottom: -15%;
+    }
     .test-cta__img {
         width: 250px;
         height: 250px;
