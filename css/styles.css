@@ -210,6 +210,9 @@ img {
     padding-top: 56px;
     padding-bottom: 255px;
     background-color: var(--dark-purple);
+    background-image: url(../imgs/back-1.svg), url(../imgs/back-2.svg);
+    background-repeat: no-repeat;
+    background-position: calc(50% - 689px) 116px, calc(50% + 680px) 313px;
 }
 
 .site-header-hero-wrapper::after {
@@ -413,6 +416,13 @@ img {
 /*=============================*
 **\ Responsive \*
 ==============================*/
+@media screen and (max-width: 1300px) {
+    .site-header-hero-wrapper {
+        background-position: -50px, calc(50% + 51%) 313px;
+    }
+}
+
+
 @media screen and (max-width: 1200px) {
     .hero__img {
         width: 630px;
@@ -557,6 +567,9 @@ img {
 
 
 @media screen and (max-width: 700px) {
+    .site-header-hero-wrapper {
+        background-image: none;
+    }
     .test-cta {
         padding-top: 328px;
         padding-bottom: 54px;
